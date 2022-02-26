@@ -17,7 +17,7 @@ public class CalculatorTest {
         assertEquals( -6, myCalculator.add(-3,-3));
 
     }
-
+    //changing a thing
 
     @Test
     public void subtractTest(){
