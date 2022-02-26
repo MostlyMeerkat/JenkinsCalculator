@@ -47,7 +47,7 @@ class Calculator {
 
         return fibonacciNumberFinder(n - 1) + fibonacciNumberFinder(n - 2);
     }
-    maeh
+
 
     /*
     Returns binary value of the given int number
