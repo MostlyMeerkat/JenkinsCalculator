@@ -2,6 +2,7 @@ public class Main {
 
     public static void main(String[] args) {
         Calculator calc = new Calculator();
+        //mod
         switch (args[0]) {
             case "add":
                 System.out.println(calc.add(Integer.parseInt(args[1]), Integer.parseInt(args[2])));
