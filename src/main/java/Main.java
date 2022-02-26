@@ -1,27 +1,42 @@
+import java.util.Scanner;
+
 public class Main {
 
     public static void main(String[] args) {
         Calculator calc = new Calculator();
-        //mod
-        switch (args[0]) {
-            case "add":
-                System.out.println(calc.add(Integer.parseInt(args[1]), Integer.parseInt(args[2])));
+        System.out.println("Calculator!!!!!!");
+        System.out.println("Enter a command:");
+        Scanner scan = new Scanner(System.in);
+
+        while (true) {
+            boolean looping = true;
+            String input = scan.nextLine();
+            switch (input.charAt(0)) {
+                case 'a':
+                    System.out.println(calc.add(Integer.parseInt(input.substring(4)), Integer.parseInt(input.substring(6))));
+                    break;
+                case 's':
+                    System.out.println(calc.subtract(Integer.parseInt(input.substring(9)), Integer.parseInt(input.substring(11))));
+                    break;
+                case 'm':
+                    System.out.println(calc.multiply(Integer.parseInt(input.substring(9)), Integer.parseInt(input.substring(11))));
+                    break;
+                case 'd':
+                    System.out.println(calc.divide(Integer.parseInt(input.substring(7)), Integer.parseInt(input.substring(9))));
+                    break;
+                case 'f':
+                    System.out.println(calc.fibonacciNumberFinder(Integer.parseInt(input.substring(10))));
+                    break;
+                case 'b':
+                    System.out.println(calc.intToBinaryNumber(Integer.parseInt(input.substring(7))));
+                    break;
+                case 'q':
+                    looping = false;
+                    break;
+            }
+            if (!looping) {
                 break;
-            case "subtract":
-                System.out.println(calc.subtract(Integer.parseInt(args[1]), Integer.parseInt(args[2])));
-                break;
-            case "multiply":
-                System.out.println(calc.multiply(Integer.parseInt(args[1]), Integer.parseInt(args[2])));
-                break;
-            case "divide":
-                System.out.println(calc.divide(Integer.parseInt(args[1]), Integer.parseInt(args[2])));
-                break;
-            case "fibonacci":
-                System.out.println(calc.fibonacciNumberFinder(Integer.parseInt(args[1])));
-                break;
-            case "binary":
-                System.out.println(calc.intToBinaryNumber(Integer.parseInt(args[1])));
-                break;
+            }
         }
     }
 }
